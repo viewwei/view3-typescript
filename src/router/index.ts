@@ -1,6 +1,7 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
 import Home from '../views/Home.vue'
-
+const Test1 = () =>import("@/components/test/test1.vue")
+const Login =() =>import("@/views/login/index.vue")
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
@@ -10,10 +11,21 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/about',
     name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+  },
+  {
+    path:"/login",
+    name:"Login",
+    component:Login
+  }
+
+]
+// asyncRoutes里面存储的路由是需要动态加载的
+const asyncRoutes:Array<RouteRecordRaw> =[
+  {
+    path:'/test1',
+    name:"test",
+    component:Test1
   }
 ]
 
@@ -21,5 +33,5 @@ const router = createRouter({
   history: createWebHashHistory(),
   routes
 })
-
+export {routes,asyncRoutes}
 export default router

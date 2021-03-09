@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+      登陆
       <button @click="login_in">登陆按钮</button>
   </div>
 </template>
@@ -8,7 +9,7 @@
 import { Options, Vue } from 'vue-class-component';
 import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
 import {namespace} from "vuex-class"
-import {userLogin} from "../store/store"
+import {userLogin} from "@/store/store"
 const loginModule = namespace("login")
 @Options({
   components: {
