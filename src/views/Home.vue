@@ -6,15 +6,12 @@
 
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
-import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
 import {namespace} from "vuex-class"
 import {userLogin} from "../store/store"
 const loginModule = namespace("login")
 @Options({
   components: {
-    HelloWorld,
   },
-  
 })
 export default class Home extends Vue {
     msg:string="home"
